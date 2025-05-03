@@ -4,11 +4,11 @@ import { VscCode } from "react-icons/vsc";
 
 const Logo = () => {
   return (
-    <Button color='primary' variant='shadow'>
-      <Link href='/'>
+    <Link href='/'>
+      <Button color='primary' variant='shadow'>
         <VscCode className='w-6 h-6' color='white' />
-      </Link>
-    </Button>
+      </Button>
+    </Link>
   );
 };
 

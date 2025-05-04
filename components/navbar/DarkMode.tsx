@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import {
   Dropdown,
   DropdownTrigger,
@@ -8,19 +9,25 @@ import {
 } from "@heroui/dropdown";
 import { Button } from "@heroui/button";
 import { useTheme } from "next-themes";
+import { FaRegMoon } from "react-icons/fa";
+import { MdOutlineWbSunny } from "react-icons/md";
 
-import { MoonFilledIcon, SunFilledIcon } from "../icons";
 const DarkMode = () => {
   const { setTheme, theme } = useTheme();
+  const [domLoaded, setDomLoaded] = useState(false);
+
+  useEffect(() => {
+    setDomLoaded(true);
+  }, []);
 
   return (
     <Dropdown>
       <DropdownTrigger>
         <Button variant='light'>
-          {theme === "light" ? (
-            <MoonFilledIcon size={22} />
+          {domLoaded && theme === "light" ? (
+            <FaRegMoon size={18} />
           ) : (
-            <SunFilledIcon size={22} />
+            <MdOutlineWbSunny size={18} />
           )}
         </Button>
       </DropdownTrigger>

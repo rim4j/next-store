@@ -1,12 +1,12 @@
 import { Divider } from "@heroui/divider";
 
 import Container from "../global/Container";
-import { ThemeSwitch } from "../theme-switch";
 
 import CartButton from "./CartButton";
 import LinkDropDown from "./LinkDropDown";
 import Logo from "./Logo";
 import NavSearch from "./NavSearch";
+import DarkMode from "./DarkMode";
 
 const NavbarApp = () => {
   return (
@@ -17,7 +17,8 @@ const NavbarApp = () => {
           <NavSearch />
           <div className='flex gap-4 items-center '>
             <CartButton />
-            <ThemeSwitch />
+            <DarkMode />
+            {/* <ThemeSwitch /> */}
             <LinkDropDown />
           </div>
         </Container>

@@ -9,7 +9,7 @@ const CartButton = () => {
   return (
     <>
       <Link className='flex justify-center items-center relative' href='/cart'>
-        <Button>
+        <Button variant='light'>
           <Badge
             color='primary'
             content={numInCart}

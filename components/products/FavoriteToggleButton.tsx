@@ -1,5 +1,12 @@
+import { Button } from "@heroui/button";
+import { FaHeart } from "react-icons/fa";
+
 const FavoriteToggleButton = () => {
-  return <div>FavoriteToggleButton</div>;
+  return (
+    <Button className='p-2 cursor-pointer' variant='flat'>
+      <FaHeart />
+    </Button>
+  );
 };
 
 export default FavoriteToggleButton;

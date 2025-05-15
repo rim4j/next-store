@@ -30,7 +30,12 @@ const ProductsGrid = ({ products }: { products: Product[] }) => {
                   className='z-0 w-full h-full scale-125 overflow-hidden -translate-y-6'
                   href={`/products/${productId}`}
                 >
-                  <Image alt={name} className='object-cover' src={image} />
+                  <Image
+                    isZoomed
+                    alt={name}
+                    className='object-cover'
+                    src={image}
+                  />
                 </Link>
               </CardBody>
               <CardFooter className='absolute bg-white/30 bottom-0 border-t-1 border-zinc-100/50 z-10 justify-between'>

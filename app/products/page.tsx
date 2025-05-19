@@ -1,11 +1,13 @@
-import { title } from "@/components/primitives";
+import ProductsContainer from "@/components/products/ProductsContainer";
 
-const ProductsPage = () => {
-  return (
-    <div>
-      <h1 className={title()}>products</h1>
-    </div>
-  );
+const ProductsPage = async ({
+  searchParams,
+}: {
+  searchParams: { layout?: string; search?: string };
+}) => {
+  const { layout = "grid", search = "" } = await searchParams;
+
+  return <ProductsContainer layout={layout} search={search} />;
 };
 
 export default ProductsPage;

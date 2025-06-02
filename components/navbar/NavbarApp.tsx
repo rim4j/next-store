@@ -1,4 +1,5 @@
 import { Navbar, NavbarBrand, NavbarContent, NavbarItem } from "@heroui/navbar";
+import { Suspense } from "react";
 
 import NavSearch from "./NavSearch";
 import CartButton from "./CartButton";
@@ -13,7 +14,9 @@ const NavbarApp = () => {
         <Logo />
       </NavbarBrand>
       <NavbarContent className='hidden sm:flex gap-4' justify='start'>
-        <NavSearch />
+        <Suspense>
+          <NavSearch />
+        </Suspense>
       </NavbarContent>
       <NavbarContent justify='end'>
         <NavbarItem className='hidden lg:flex'>

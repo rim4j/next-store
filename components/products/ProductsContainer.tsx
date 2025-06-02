@@ -59,7 +59,7 @@ const ProductsContainer = async ({
         ) : layout === "grid" ? (
           <ProductsGrid products={products} />
         ) : (
-          <ProductsList />
+          <ProductsList products={products} />
         )}
       </div>
     </>

@@ -1,16 +1,30 @@
-import { Breadcrumbs, BreadcrumbItem } from "@heroui/breadcrumbs";
+import Link from "next/link";
 
 const BreadCrumbs = ({ name }: { name: string }) => {
   return (
-    <Breadcrumbs>
-      <BreadcrumbItem className='capitalize text-lg' href='/'>
-        Home
-      </BreadcrumbItem>
-      <BreadcrumbItem className='capitalize text-lg' href='/products'>
-        products
-      </BreadcrumbItem>
-      <BreadcrumbItem className='capitalize text-lg'>{name}</BreadcrumbItem>
-    </Breadcrumbs>
+    <div>
+      <ul className='flex '>
+        <li>
+          <Link className='capitalize text-lg px-2' href='/'>
+            Home
+          </Link>
+        </li>
+        <li>
+          <span>/</span>
+        </li>
+        <li>
+          <Link className='capitalize text-lg px-2' href='/products'>
+            Products
+          </Link>
+        </li>
+        <li>
+          <span>/</span>
+        </li>
+        <li>
+          <p className='capitalize text-lg px-2 text-gray-500'>{name}</p>
+        </li>
+      </ul>
+    </div>
   );
 };
 

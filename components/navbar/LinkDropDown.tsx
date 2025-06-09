@@ -8,6 +8,8 @@ import {
 import { Button } from "@heroui/button";
 import { LuAlignLeft } from "react-icons/lu";
 
+import SignOutLink from "./SignOutLink";
+
 import { navLinks } from "@/utils/links";
 
 const LinkDropDown = () => {
@@ -32,7 +34,8 @@ const LinkDropDown = () => {
             </>
           ))}
           <DropdownItem key='logout' color='danger'>
-            <p className='text-danger'>logout</p>
+            {/* <p className='text-danger'>logout</p> */}
+            <SignOutLink />
           </DropdownItem>
         </>
       </DropdownMenu>

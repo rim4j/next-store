@@ -1,13 +1,14 @@
 "use client";
+import { SignOutButton } from "@clerk/nextjs";
 import { addToast } from "@heroui/toast";
 import Link from "next/link";
-import { SignOutButton } from "@clerk/nextjs";
 
 const SignOutLink = () => {
   const handleLogout = () => {
     addToast({
       title: "Log Out",
       description: "Logged out successfully",
+      color: "success",
     });
   };
 

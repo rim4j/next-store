@@ -34,7 +34,6 @@ const LinkDropDown = () => {
             </>
           ))}
           <DropdownItem key='logout' color='danger'>
-            {/* <p className='text-danger'>logout</p> */}
             <SignOutLink />
           </DropdownItem>
         </>

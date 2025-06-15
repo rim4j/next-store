@@ -6,6 +6,7 @@ import CartButton from "./CartButton";
 import DarkMode from "./DarkMode";
 import LinkDropDown from "./LinkDropDown";
 import Logo from "./Logo";
+import UserIcon from "./UserIcon";
 
 const NavbarApp = () => {
   return (
@@ -26,7 +27,12 @@ const NavbarApp = () => {
           <DarkMode />
         </NavbarItem>
         <NavbarItem className='hidden lg:flex'>
-          <LinkDropDown />
+          <div className='flex items-center'>
+            <LinkDropDown />
+            <div className='ml-4'>
+              <UserIcon />
+            </div>
+          </div>
         </NavbarItem>
       </NavbarContent>
     </Navbar>

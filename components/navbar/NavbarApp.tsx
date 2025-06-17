@@ -4,9 +4,9 @@ import { Suspense } from "react";
 import NavSearch from "./NavSearch";
 import CartButton from "./CartButton";
 import DarkMode from "./DarkMode";
-import LinkDropDown from "./LinkDropDown";
 import Logo from "./Logo";
 import UserIcon from "./UserIcon";
+import LinkDropDownServer from "./LinkDropDownServer";
 
 const NavbarApp = () => {
   return (
@@ -28,7 +28,7 @@ const NavbarApp = () => {
         </NavbarItem>
         <NavbarItem className='hidden lg:flex'>
           <div className='flex items-center'>
-            <LinkDropDown />
+            <LinkDropDownServer />
             <div className='ml-4'>
               <UserIcon />
             </div>

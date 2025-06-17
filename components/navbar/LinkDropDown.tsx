@@ -13,7 +13,7 @@ import SignOutLink from "./SignOutLink";
 
 import { navLinks } from "@/utils/links";
 
-const LinkDropDown = () => {
+const LinkDropDown = ({ isAdmin }: { isAdmin: boolean }) => {
   return (
     <>
       <SignedOut>
@@ -51,15 +51,19 @@ const LinkDropDown = () => {
           </DropdownTrigger>
           <DropdownMenu aria-label='Action event example' variant='flat'>
             <>
-              {navLinks.map((item, i) => (
-                <DropdownItem
-                  key={i}
-                  href={item.href}
-                  showDivider={navLinks.length - 1 === i ? true : false}
-                >
-                  {item.label}
-                </DropdownItem>
-              ))}
+              {navLinks.map((item, i) => {
+                if (item.label === "dashboard" && !isAdmin) return null;
+
+                return (
+                  <DropdownItem
+                    key={i}
+                    href={item.href}
+                    showDivider={navLinks.length - 1 === i ? true : false}
+                  >
+                    {item.label}
+                  </DropdownItem>
+                );
+              })}
               <DropdownItem key='logout' color='danger'>
                 <SignOutLink />
               </DropdownItem>

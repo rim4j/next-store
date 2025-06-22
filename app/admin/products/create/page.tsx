@@ -1,6 +1,7 @@
 import { Button } from "@heroui/button";
-import { Input } from "@heroui/input";
 import { faker } from "@faker-js/faker";
+
+import FormInput from "@/components/form/FormInput";
 
 const createProductAction = async (formData: FormData) => {
   "use server";
@@ -19,17 +20,12 @@ const CreateProductPage = () => {
       <h1 className='text-xl font-semibold mb-8 capitalize'>create product</h1>
       <div className='border p-8 rounded-md'>
         <form action={createProductAction}>
-          <div className='mb-2'>
-            <Input
-              defaultValue={name}
-              id='name'
-              label='Product Name'
-              labelPlacement='outside'
-              name='name'
-              placeholder='Enter product name'
-              type='text'
-            />
-          </div>
+          <FormInput
+            defaultValue={name}
+            label='Product Name'
+            name='name'
+            type='text'
+          />
           <Button color='primary' type='submit'>
             Submit
           </Button>

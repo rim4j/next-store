@@ -22,7 +22,6 @@ const FormInput = ({
         defaultValue={defaultValue}
         id={name}
         label={label || name}
-        labelPlacement='outside'
         name={name}
         placeholder={placeholder}
         type={type}

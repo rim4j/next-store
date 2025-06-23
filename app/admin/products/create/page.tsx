@@ -2,6 +2,10 @@ import { Button } from "@heroui/button";
 import { faker } from "@faker-js/faker";
 
 import FormInput from "@/components/form/FormInput";
+import PriceInput from "@/components/form/PriceInput";
+import ImageInput from "@/components/form/ImageInput";
+import TextAreaInput from "@/components/form/TextAreaInput";
+import CheckboxInput from "@/components/form/CheckboxInput";
 
 const createProductAction = async (formData: FormData) => {
   "use server";
@@ -26,6 +30,10 @@ const CreateProductPage = () => {
             name='name'
             type='text'
           />
+          <PriceInput />
+          <ImageInput />
+          <CheckboxInput label='checkbox' name='checkbox' />
+          <TextAreaInput labelText='text' name='text' />
           <Button color='primary' type='submit'>
             Submit
           </Button>

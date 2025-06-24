@@ -14,7 +14,7 @@ type SubmitButtonProps = {
   size?: btnSize;
 };
 
-const Buttons = ({
+export const SubmitButton = ({
   className = "",
   size = "lg",
   text = "submit",
@@ -34,5 +34,3 @@ const Buttons = ({
     </Button>
   );
 };
-
-export default Buttons;

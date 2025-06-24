@@ -11,13 +11,13 @@ const TextAreaInput = ({
   defaultValue,
 }: TextAreaInputProps) => {
   return (
-    <div className='mb-2'>
+    <div className='mb-2 w-full'>
       <Textarea
+        isClearable
         required
-        className='leading-loose'
         defaultValue={defaultValue}
         id={name}
-        label={name || labelText}
+        label={labelText || name}
         name={name}
         rows={5}
       />

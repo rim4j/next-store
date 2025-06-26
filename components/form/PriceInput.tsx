@@ -1,6 +1,6 @@
 import { NumberInput } from "@heroui/number-input";
 
-const name = "Price";
+const name = "price";
 
 type FormInputNumberProps = {
   defaultValue?: number;

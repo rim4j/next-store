@@ -6,14 +6,7 @@ const ImageInput = () => {
 
   return (
     <div className='mb-2'>
-      <Input
-        required
-        accept='image/*'
-        id={name}
-        label={name}
-        name={name}
-        type='file'
-      />
+      <Input accept='image/*' id={name} label={name} name={name} type='file' />
     </div>
   );
 };

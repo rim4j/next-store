@@ -10,7 +10,11 @@ import {
 } from "@heroui/table";
 import { Product } from "@prisma/client";
 
+import { IconButton } from "./form/Buttons";
+import FormContainer from "./form/FormContainer";
+
 import { formatCurrency } from "@/utils/format";
+import { deleteProductAction } from "@/utils/actions";
 
 const TableApp = ({ items }: { items: Product[] }) => {
   return (
@@ -35,7 +39,14 @@ const TableApp = ({ items }: { items: Product[] }) => {
               </TableCell>
               <TableCell>{item.company}</TableCell>
               <TableCell>{formatCurrency(item.price)}</TableCell>
-              <TableCell>Active</TableCell>
+              <TableCell className='flex items-center gap-x-2'>
+                <Link href={`/admin/products/${item.id}/edit`}>
+                  <IconButton actionType='edit' />
+                </Link>
+                <Link href={`/admin/products/${item.id}/edit`}>
+                  <DeleteProduct productId={item.id} />
+                </Link>
+              </TableCell>
             </TableRow>
           );
         })}
@@ -45,3 +56,13 @@ const TableApp = ({ items }: { items: Product[] }) => {
 };
 
 export default TableApp;
+
+function DeleteProduct({ productId }: { productId: string }) {
+  const deleteProduct = deleteProductAction.bind(null, { productId });
+
+  return (
+    <FormContainer action={deleteProduct}>
+      <IconButton actionType='delete' color='danger' />
+    </FormContainer>
+  );
+}

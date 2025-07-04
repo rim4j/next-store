@@ -40,14 +40,21 @@ export const SubmitButton = ({
 
 type actionType = "edit" | "delete";
 
-export const IconButton = ({ actionType }: { actionType: actionType }) => {
+type color = "primary" | "secondary" | "danger";
+export const IconButton = ({
+  actionType,
+  color = "primary",
+}: {
+  actionType: actionType;
+  color?: color;
+}) => {
   const { pending } = useFormStatus();
   const renderIcon = () => {
     switch (actionType) {
       case "edit":
-        return <HiOutlinePencilAlt />;
+        return <HiOutlinePencilAlt size={20} />;
       case "delete":
-        return <LuTrash2 />;
+        return <LuTrash2 size={20} />;
       default:
         const never: never = actionType;
 
@@ -58,11 +65,12 @@ export const IconButton = ({ actionType }: { actionType: actionType }) => {
   return (
     <Button
       className='p-2 cursor-pointer'
+      color={color}
       size='sm'
       type='submit'
       variant='light'
     >
-      {pending ? <Spinner /> : renderIcon()}
+      {pending ? <Spinner color='white' /> : renderIcon()}
     </Button>
   );
 };

@@ -1,5 +1,4 @@
 "use client";
-
 import { Checkbox } from "@heroui/checkbox";
 
 type CheckboxInputProps = {

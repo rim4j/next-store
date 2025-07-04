@@ -41,7 +41,7 @@ const CreateProductPage = () => {
             />
           </div>
           <div className='mt-6'>
-            <CheckboxInput label='Featured' name='featured' />
+            <CheckboxInput label='featured' name='featured' />
           </div>
           <SubmitButton className='mt-8' text='Create product' />
         </FormContainer>

@@ -5,6 +5,7 @@ import BreadCrumbs from "@/components/single-product/BreadCrumbs";
 import ProductRating from "@/components/single-product/ProductRating";
 import { fetchSingleProduct } from "@/utils/actions";
 import { formatCurrency } from "@/utils/format";
+import FavoriteToggleButton from "@/components/products/FavoriteToggleButton";
 
 const SingleProductPage = async ({ params }: { params: { id: string } }) => {
   const { id } = await params;
@@ -30,7 +31,7 @@ const SingleProductPage = async ({ params }: { params: { id: string } }) => {
         <div>
           <div className='flex gap-x-8 items-center '>
             <h1 className='capitalize text-xl font-bold '>{name}</h1>
-            {/* <FavoriteToggleButton productId={id} /> */}
+            <FavoriteToggleButton productId={product.id} />
           </div>
           <ProductRating productId={id} />
           <h4 className='text-xl mt-2'>{company}</h4>

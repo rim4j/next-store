@@ -1,11 +1,23 @@
-import { Button } from "@heroui/button";
-import { FaHeart } from "react-icons/fa";
+import { auth } from "@clerk/nextjs/server";
 
-const FavoriteToggleButton = () => {
+import { CardSignInButton } from "../form/Buttons";
+
+import FavoriteToggleForm from "./FavoriteToggleForm";
+
+import { fetchFavoriteId } from "@/utils/actions";
+
+const FavoriteToggleButton = async ({ productId }: { productId: string }) => {
+  const { userId } = await auth();
+
+  if (!userId) return <CardSignInButton />;
+
+  const favoriteId = await fetchFavoriteId({ productId });
+
   return (
-    <Button className='p-2 cursor-pointer' variant='flat'>
-      <FaHeart />
-    </Button>
+    <FavoriteToggleForm favoriteId={favoriteId} productId={productId} />
+    // <Button className='p-2 cursor-pointer' variant='flat'>
+    //   <FaHeart />
+    // </Button>
   );
 };
 

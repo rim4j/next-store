@@ -23,7 +23,7 @@ const ProductsGrid = ({ products }: { products: Product[] }) => {
               className='w-full h-[300px] col-span-12 sm:col-span-5'
             >
               <CardHeader className='absolute z-10 top-1 flex-col items-end'>
-                <FavoriteToggleButton />
+                <FavoriteToggleButton productId={productId} />
               </CardHeader>
               <CardBody>
                 <Link

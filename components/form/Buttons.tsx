@@ -6,6 +6,8 @@ import { useFormStatus } from "react-dom";
 import { LuTrash2 } from "react-icons/lu";
 import { Spinner } from "@heroui/spinner";
 import { HiOutlinePencilAlt } from "react-icons/hi";
+import { SignInButton } from "@clerk/nextjs";
+import { FaHeart, FaRegHeart } from "react-icons/fa";
 
 import { cn } from "@/lib/utils";
 
@@ -71,6 +73,42 @@ export const IconButton = ({
       variant='light'
     >
       {pending ? <Spinner color='white' /> : renderIcon()}
+    </Button>
+  );
+};
+
+export const CardSignInButton = () => {
+  return (
+    <SignInButton mode='modal'>
+      <Button
+        className='p-2 cursor-pointer'
+        size='md'
+        type='button'
+        variant='flat'
+      >
+        <FaRegHeart />
+      </Button>
+    </SignInButton>
+  );
+};
+
+export const CardSubmitButton = ({ isFavorite }: { isFavorite: boolean }) => {
+  const { pending } = useFormStatus();
+
+  return (
+    <Button
+      className='p-2 cursor-pointer'
+      size='sm'
+      type='submit'
+      variant='flat'
+    >
+      {pending ? (
+        <Spinner size='sm' />
+      ) : isFavorite ? (
+        <FaHeart />
+      ) : (
+        <FaRegHeart />
+      )}
     </Button>
   );
 };
